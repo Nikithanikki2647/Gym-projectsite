@@ -1,0 +1,75 @@
+body {
+    color: white;
+    margin: 0;
+    padding: 0;
+    background-image: url('gym3.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    
+}
+
+.header {
+    padding: 25px;
+}
+
+.left {
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: 15px;
+}
+
+.left img {
+    width: 100px;
+}
+
+.left div {
+    text-align: center;
+}
+
+.mid {
+    display: block;
+    width: 33%;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.right {
+    display: inline-block;
+    position: absolute;
+    right: 30px;
+    top: 15px;
+}
+
+.mid a, .right a {
+    color: wheat;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.mid a:hover, .right a:hover {
+    text-decoration: underline;
+}
+
+.class {
+    text-align: center;
+    color: white;
+    margin: 20px auto;
+    padding: 50px;
+    border-radius: 5%;
+    background: rgba(0, 0, 0, 0.5); /* Slightly transparent background for readability */
+    width: 80%;
+    max-width: 800px;
+    font-family: "Times New Roman", Times, serif;
+}
+
+.class h3 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.class p {
+    font-size: 1.2em;
+    line-height: 1.5;
+}
