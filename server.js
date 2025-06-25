@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const session = require("express-session");
 const path = require("path");
-require("dotenv").config();
+
 
 const app = express();
 
@@ -21,13 +21,9 @@ app.use(session({
   saveUninitialized: false
 }));
 
-mongoose.connect(process.env.MONGODB_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-})
-.then(() => console.log("✅ MongoDB connected successfully"))
-.catch((err) => console.error("❌ MongoDB connection error:", err));
-
+mongoose.connect("mongodb://localhost:27017/gymDB")
+  .then(() => console.log("✅ MongoDB connected"))
+  .catch(err => console.error("❌ MongoDB error:", err));
 // Registration form
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "reggym.html"));
