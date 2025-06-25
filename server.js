@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const session = require("express-session");
 const path = require("path");
+require("dotenv").config();
 
 const app = express();
 
@@ -22,6 +23,13 @@ app.use(session({
   resave: false,
   saveUninitialized: false
 }));
+
+mongoose.connect(process.env.MONGODB_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+})
+.then(() => console.log("✅ MongoDB connected successfully"))
+.catch((err) => console.error("❌ MongoDB connection error:", err));
 
 // Registration form
 app.get("/", (req, res) => {
