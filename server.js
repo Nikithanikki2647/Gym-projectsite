@@ -8,9 +8,6 @@ require("dotenv").config();
 const app = express();
 
 // MongoDB connection
-mongoose.connect("mongodb://localhost:27017/gymDB")
-  .then(() => console.log("✅ MongoDB connected"))
-  .catch(err => console.error("❌ MongoDB error:", err));
 
 // Import model
 const Gym = require("./models/gym");
